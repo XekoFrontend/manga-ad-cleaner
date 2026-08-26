@@ -1,6 +1,8 @@
 # Advertisement Hash Cleaner
 
-## Cách dùng
+## Ad Cleaner
+
+### Cách dùng
 
 1. Tạo thư mục `ad_samples` ở đâu cũng được.
 2. Bỏ tất cả ảnh quảng cáo mẫu vào đó.
@@ -19,7 +21,7 @@ Chế độ 1 sẽ thêm hash mới, không xóa hash cũ.
 
 Chế độ 3 thay thế toàn bộ danh sách hash bằng ảnh mẫu hiện tại.
 
-## Cách lấy hash thủ công
+### Cách lấy hash thủ công
 
 1. Windows PowerShell:
 
@@ -32,3 +34,8 @@ Get-FileHash "001.png" -Algorithm SHA256
 ```
 certutil -hashfile "001.png" SHA256
 ```
+
+## Auto rename folder/file
+
+1. Rename
+2. cbz pack
