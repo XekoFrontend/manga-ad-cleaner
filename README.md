@@ -18,3 +18,17 @@ Mỗi lần thêm ảnh mẫu mới, chỉ cần bỏ ảnh vào thư mục mẫ
 Chế độ 1 sẽ thêm hash mới, không xóa hash cũ.
 
 Chế độ 3 thay thế toàn bộ danh sách hash bằng ảnh mẫu hiện tại.
+
+## Cách lấy hash thủ công
+
+1. Windows PowerShell:
+
+```
+Get-FileHash "001.png" -Algorithm SHA256
+```
+
+2. CMD:
+
+```
+certutil -hashfile "001.png" SHA256
+```
