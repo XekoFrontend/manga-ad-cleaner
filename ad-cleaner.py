@@ -192,42 +192,21 @@ def main():
         return
 
     print(f"Tìm thấy {len(image_files)} file ảnh cần kiểm tra.")
+    print("\nĐang quét (DRY RUN - chưa xóa gì cả)...")
 
-    print("\nChế độ:")
-    print("1. DRY RUN - chỉ tìm, KHÔNG xóa")
-    print("2. DELETE - tìm và xóa file trùng hash")
-
-    action = input("Chọn [1]: ").strip() or "1"
-
-    if action not in {"1", "2"}:
-        print("Lựa chọn không hợp lệ.")
-        return
-
-    delete_mode = action == "2"
-
-    if delete_mode:
-        print("\n⚠️ CẢNH BÁO: Chế độ DELETE sẽ xóa file thật.")
-        confirm = input("Gõ DELETE để xác nhận: ").strip()
-
-        if confirm != "DELETE":
-            print("Đã hủy.")
-            return
-
-    log_path = make_log_path()
     log_lines = [
         "Advertisement Hash Cleaner",
         f"Time: {datetime.now()}",
         f"Root: {root}",
         f"Hash count: {len(hashes)}",
-        f"Mode: {'DELETE' if delete_mode else 'DRY RUN'}",
         "",
     ]
 
     total_files_scanned = len(image_files)
-    total_matches = 0
     total_deleted = 0
     errors = 0
     dirs_with_match = set()
+    matches = []  # list of (path, digest, rel_str)
 
     print()
     for idx, p in enumerate(image_files, 1):
@@ -246,36 +225,50 @@ def main():
         if digest not in hashes:
             continue
 
-        total_matches += 1
-        dirs_with_match.add(p.parent)
-
         try:
             rel = p.relative_to(root)
         except ValueError:
             rel = p
+
+        matches.append((p, digest, str(rel)))
+        dirs_with_match.add(p.parent)
 
         print(f"\n  MATCH: {rel}")
         print(f"         SHA256: {digest}")
 
         log_lines.append(f"[MATCH] {p}")
         log_lines.append(f"SHA256: {digest}")
-
-        if delete_mode:
-            try:
-                p.unlink()
-                total_deleted += 1
-                print("         🗑 Đã xóa")
-                log_lines.append("ACTION: DELETED")
-            except Exception as e:
-                errors += 1
-                print(f"         ✗ Không xóa được: {e}")
-                log_lines.append(f"ACTION: ERROR - {e}")
-        else:
-            print("         DRY RUN - chưa xóa")
-
         log_lines.append("")
 
     print()  # xuống dòng sau progress bar
+
+    total_matches = len(matches)
+
+    print("\n" + "-" * 70)
+    print(f"Quét xong. File trùng hash: {total_matches} (trong {len(dirs_with_match)} thư mục).")
+    print("-" * 70)
+
+    delete_mode = False
+
+    if total_matches > 0:
+        print("\n⚠️ Bạn có muốn XÓA các file trùng hash ở trên ngay bây giờ?")
+        confirm = input("Gõ DELETE để xác nhận (Enter để bỏ qua, không xóa gì): ").strip()
+        delete_mode = confirm == "DELETE"
+
+        if delete_mode:
+            print()
+            for p, digest, rel in matches:
+                try:
+                    p.unlink()
+                    total_deleted += 1
+                    print(f"  🗑 Đã xóa: {rel}")
+                    log_lines.append(f"[DELETED] {p}")
+                except Exception as e:
+                    errors += 1
+                    print(f"  ✗ Không xóa được: {rel} | {e}")
+                    log_lines.append(f"[DELETE ERROR] {p}: {e}")
+        else:
+            print("Đã bỏ qua, không xóa gì cả.")
 
     log_lines.extend([
         "=" * 70,
@@ -284,9 +277,11 @@ def main():
         f"Files matched      : {total_matches}",
         f"Files deleted      : {total_deleted}",
         f"Errors             : {errors}",
+        f"Mode               : {'DELETE' if delete_mode else 'DRY RUN ONLY'}",
         "=" * 70,
     ])
 
+    log_path = make_log_path()
     log_path.write_text("\n".join(log_lines), encoding="utf-8")
 
     print("\n" + "=" * 70)
