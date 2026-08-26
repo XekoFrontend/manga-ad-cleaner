@@ -165,12 +165,13 @@ def main():
     print("Tool sẽ xóa file nếu SHA-256 của file trùng với BẤT KỲ")
     print("SHA-256 nào trong danh sách ảnh mẫu.")
     print("Quét đệ quy TOÀN BỘ thư mục con, không phụ thuộc tên thư mục.")
+    print("-" * 70)
     print()
 
     # Load existing hashes first.
     hashes = load_hashes()
 
-    print("Chọn:")
+    print("👇 Chọn:")
     print("1. Quét thư mục ảnh mẫu và CẬP NHẬT hash")
     print("2. Dùng danh sách hash đã lưu")
     print("3. Quét ảnh mẫu và THAY THẾ danh sách hash cũ")
@@ -322,7 +323,7 @@ def main():
                 try:
                     p.unlink()
                     total_deleted += 1
-                    print(f"  🗑 Đã xóa: {rel}")
+                    print(f"  🗑️ Đã xóa: {rel}")
                     log_lines.append(f"[DELETED] {p}")
                 except Exception as e:
                     errors += 1
@@ -346,7 +347,7 @@ def main():
     log_path.write_text("\n".join(log_lines), encoding="utf-8")
 
     print("\n" + "=" * 70)
-    print("HOÀN TẤT")
+    print("✅ HOÀN TẤT")
     print("=" * 70)
     print(f"File quét         : {total_files_scanned}")
     print(f"Thư mục có AD     : {len(dirs_with_match)}")
