@@ -16,6 +16,7 @@ Python 3.x, standard library only.
 
 import hashlib
 import json
+import os
 import sys
 from pathlib import Path
 from datetime import datetime
@@ -28,6 +29,12 @@ IMAGE_EXTENSIONS = {
     ".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp",
     ".avif", ".jfif", ".tif", ".tiff"
 }
+
+# Tên thư mục sẽ luôn bị loại khỏi vòng quét/xóa (không phân biệt hoa thường),
+# phòng trường hợp user để chung thư mục ảnh mẫu vào cùng chỗ với các thư mục cần quét.
+EXCLUDED_DIR_NAMES = {"ad_samples"}
+
+DEFAULT_SAMPLE_DIR_NAME = "ad_samples"
 
 PROGRESS_EVERY = 50  # in báo tiến độ mỗi N file khi quét
 
@@ -47,10 +54,19 @@ def is_image(path):
     return path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS
 
 
-def choose_directory(prompt):
+def choose_directory(prompt, default=None):
+    """
+    Nếu default được cung cấp và tồn tại: Enter sẽ dùng luôn default đó.
+    Nếu không có default: Enter sẽ trả về None (bỏ qua/hủy), như cũ.
+    """
+    if default is not None:
+        prompt = f"{prompt}\n(Enter để dùng: {default}) "
+
     while True:
         raw = input(prompt).strip().strip('"')
         if not raw:
+            if default is not None:
+                return default
             return None
         p = Path(raw).expanduser().resolve()
         if p.is_dir():
@@ -105,9 +121,34 @@ def build_hashes_from_samples(sample_dir):
     return hashes
 
 
-def collect_all_images(root):
-    """Quét TOÀN BỘ file ảnh trong root, đệ quy qua mọi thư mục con, bất kể tên."""
-    return sorted(p for p in root.rglob("*") if is_image(p))
+def collect_all_images(root, exclude_dirs=None):
+    """
+    Quét TOÀN BỘ file ảnh trong root, đệ quy qua mọi thư mục con, bất kể tên.
+    Bỏ qua (không đi vào) các thư mục trong exclude_dirs hoặc có tên nằm
+    trong EXCLUDED_DIR_NAMES (vd: ad_samples) - dùng os.walk để prune luôn,
+    không tốn công quét sâu vào những thư mục này.
+    """
+    exclude_resolved = {d.resolve() for d in (exclude_dirs or [])}
+    images = []
+
+    for dirpath, dirnames, filenames in os.walk(root):
+        current = Path(dirpath)
+
+        kept = []
+        for d in dirnames:
+            if d.lower() in EXCLUDED_DIR_NAMES:
+                continue
+            if (current / d).resolve() in exclude_resolved:
+                continue
+            kept.append(d)
+        dirnames[:] = kept  # prune ngay tại chỗ, os.walk sẽ không đi vào các thư mục bị loại
+
+        for name in filenames:
+            fp = current / name
+            if is_image(fp):
+                images.append(fp)
+
+    return sorted(images)
 
 
 def make_log_path():
@@ -136,9 +177,17 @@ def main():
 
     mode = input("Chọn [1/2/3]: ").strip() or "1"
 
+    # Nếu thấy sẵn thư mục "ad_samples" nằm ngay cạnh script -> gợi ý làm default.
+    default_sample_dir = SCRIPT_DIR / DEFAULT_SAMPLE_DIR_NAME
+    if not default_sample_dir.is_dir():
+        default_sample_dir = None
+
+    sample_dir = None  # sẽ set nếu mode 1/3, dùng để loại trừ khỏi vòng quét
+
     if mode == "1":
         sample_dir = choose_directory(
-            "\nĐường dẫn thư mục chứa ảnh quảng cáo mẫu: "
+            "\nĐường dẫn thư mục chứa ảnh quảng cáo mẫu:",
+            default=default_sample_dir,
         )
         if not sample_dir:
             return
@@ -152,7 +201,8 @@ def main():
 
     elif mode == "3":
         sample_dir = choose_directory(
-            "\nĐường dẫn thư mục chứa ảnh quảng cáo mẫu: "
+            "\nĐường dẫn thư mục chứa ảnh quảng cáo mẫu:",
+            default=default_sample_dir,
         )
         if not sample_dir:
             return
@@ -178,14 +228,23 @@ def main():
     print(f"Lưu tại: {HASH_FILE}")
     print("-" * 70)
 
+    # Mặc định thư mục gốc = thư mục chứa chính script này, tiện cho trường hợp
+    # ad_cleaner.py được để ngang hàng (thư mục mẹ) với các thư mục chứa ảnh cần quét.
     root = choose_directory(
-        "\nĐường dẫn thư mục gốc cần quét (sẽ quét tất cả thư mục con): "
+        "\nĐường dẫn thư mục gốc cần quét (sẽ quét tất cả thư mục con):",
+        default=SCRIPT_DIR,
     )
     if not root:
         return
 
-    print("\nĐang liệt kê toàn bộ file ảnh, có thể mất chút thời gian...")
-    image_files = collect_all_images(root)
+    exclude_dirs = [sample_dir] if sample_dir else []
+    if exclude_dirs or EXCLUDED_DIR_NAMES:
+        names = ", ".join(sorted(EXCLUDED_DIR_NAMES))
+        print(f"\n(Sẽ bỏ qua các thư mục tên: {names}"
+              + (f" và {sample_dir}" if sample_dir else "") + ")")
+
+    print("Đang liệt kê toàn bộ file ảnh, có thể mất chút thời gian...")
+    image_files = collect_all_images(root, exclude_dirs=exclude_dirs)
 
     if not image_files:
         print(f"\n⚠ Không tìm thấy file ảnh nào trong: {root}")
@@ -199,6 +258,8 @@ def main():
         f"Time: {datetime.now()}",
         f"Root: {root}",
         f"Hash count: {len(hashes)}",
+        f"Excluded dir names: {', '.join(sorted(EXCLUDED_DIR_NAMES))}"
+        + (f" (+ {sample_dir})" if sample_dir else ""),
         "",
     ]
 
