@@ -1,3 +1,6 @@
+# Bỏ qua toàn bộ folder này
+logs/
+
 # Bỏ qua một file cụ thể
 ad_hashes.json
 ad_hashes.json
