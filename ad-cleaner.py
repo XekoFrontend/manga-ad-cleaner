@@ -522,10 +522,10 @@ def choose_rules():
         print(f"\n📋 Đã có {len(saved)} rule lưu từ lần trước ({RULES_FILE.name}):")
         print_rules(saved)
         print("\nBạn muốn:")
-        print("  Enter / Y = DÙNG LẠI các rule này")
+        print("  Y         = DÙNG LẠI các rule này")
         print("  A         = giữ rule cũ và THÊM rule mới")
-        print("  N         = bỏ rule cũ, TẠO MỚI hoàn toàn")
-        ans = input("Chọn [Y/A/N]: ").strip().lower() or "y"
+        print("  Enter / N = bỏ rule cũ, TẠO MỚI hoàn toàn")
+        ans = input("Chọn [Y/A/N]: ").strip().lower() or "n"
 
         if ans == "y":
             return saved
@@ -760,15 +760,15 @@ def main():
     print("=" * 70)
     print()
     print("Chọn chế độ:")
-    print("1. Xóa quảng cáo theo HASH (so khớp ảnh mẫu trong ad_samples)")
-    print("2. Xóa file theo VỊ TRÍ / TÊN (file đầu, file cuối, pattern tên)")
+    print("1. Xóa file theo VỊ TRÍ / TÊN (file đầu, file cuối, pattern tên)")
+    print("2. Xóa quảng cáo theo HASH (so khớp ảnh mẫu trong ad_samples)")
 
     mode = input("Chọn [1/2]: ").strip() or "1"
 
     if mode == "1":
-        run_hash_mode()
-    elif mode == "2":
         run_rule_mode()
+    elif mode == "2":
+        run_hash_mode()
     else:
         print("Lựa chọn không hợp lệ.")
 

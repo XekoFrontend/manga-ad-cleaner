@@ -58,6 +58,8 @@ Thêm nhiều rule một lượt, kết quả là hợp của các rule:
 | Theo tên  | `*credit*`        | glob (mặc định)                               |
 | Theo tên  | `re:^00[12]\.`    | gõ `re:` ở đầu để dùng regex                  |
 
+- Xem hướng dẫn về [regex](regex.md)
+
 Ngoài ra:
 
 - **Phạm vi:** Enter = tất cả thư mục; `10-20` = thư mục thứ 10 đến 20; hoặc gõ từ khóa tên thư mục.
