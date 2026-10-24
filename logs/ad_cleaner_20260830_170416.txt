@@ -1,0 +1,102 @@
+Advertisement Hash Cleaner
+Time: 2026-08-30 16:55:14.674760
+Root: C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki
+Hash count: 4
+Excluded dir names: ad_samples (+ C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\ad_samples)
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_060\020.png
+SHA256: d458173fb73e4734710a02feb18708b8f3ca60b25965a4421d4cb02dedfb7066
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_087\018.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_100\015.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_101\018.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_102\010.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_103\018.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_86\018.png
+SHA256: d458173fb73e4734710a02feb18708b8f3ca60b25965a4421d4cb02dedfb7066
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_90\018.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_91\016.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_92\014.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_95\018.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_98\018.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_99\015.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_999 Daredemo Dakeru Kimi ga Suki’ × ‘Pure 0.01 mm’ Tokubetsu Collab Manga\Ch_None\010.png
+SHA256: d458173fb73e4734710a02feb18708b8f3ca60b25965a4421d4cb02dedfb7066
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_007\Ch_061_Mình Đi Thôi\018.webp
+SHA256: 693d90f5226772f92d684d5563c30f8cb6c824687b5c0dba1d5b9c188264df06
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_067_Đút Cái Đéo Gì Đấy!_\018.webp
+SHA256: 693d90f5226772f92d684d5563c30f8cb6c824687b5c0dba1d5b9c188264df06
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_068\017.png
+SHA256: d458173fb73e4734710a02feb18708b8f3ca60b25965a4421d4cb02dedfb7066
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_069\018.png
+SHA256: d458173fb73e4734710a02feb18708b8f3ca60b25965a4421d4cb02dedfb7066
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_071_Mày Bị Sao Thế_\017.webp
+SHA256: 693d90f5226772f92d684d5563c30f8cb6c824687b5c0dba1d5b9c188264df06
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_72\017.png
+SHA256: d458173fb73e4734710a02feb18708b8f3ca60b25965a4421d4cb02dedfb7066
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_74\019.png
+SHA256: d458173fb73e4734710a02feb18708b8f3ca60b25965a4421d4cb02dedfb7066
+
+[MATCH] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_009\Ch_86_5\008.png
+SHA256: 52cf2c90a20224bc7173b0c108df2f070b9c6b3f2656cabacc9d8cf39cc89468
+
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_060\020.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_087\018.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_100\015.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_101\018.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_102\010.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_103\018.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_86\018.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_90\018.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_91\016.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_92\014.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_95\018.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_98\018.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_99\015.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Ch_999 Daredemo Dakeru Kimi ga Suki’ × ‘Pure 0.01 mm’ Tokubetsu Collab Manga\Ch_None\010.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_007\Ch_061_Mình Đi Thôi\018.webp
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_067_Đút Cái Đéo Gì Đấy!_\018.webp
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_068\017.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_069\018.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_071_Mày Bị Sao Thế_\017.webp
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_72\017.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_008\Ch_74\019.png
+[DELETED] C:\Users\haola\OneDrive - tsd06\Comic\0unchek\Crush cua toi la mot dua lang lo-Daredemo Dakeru Kimi ga Suki\Vol_009\Ch_86_5\008.png
+======================================================================
+Files scanned      : 2322
+Folders with match : 22
+Files matched      : 22
+Files deleted      : 22
+Errors             : 0
+Mode               : DELETE
+======================================================================
